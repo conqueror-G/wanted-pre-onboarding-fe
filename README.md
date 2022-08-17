@@ -1,5 +1,6 @@
-# 팀명 :
+## 프로젝트 정보
 
-## F/E:
-
-## B/E:
+React js v18
+상태관리 : redux v4
+라우팅 : react-router-dom v6
+CSS : tailwindcss v3
