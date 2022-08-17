@@ -1,18 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from "./components/nav/Nav";
-import Footer from "./components/footer/Footer";
-import Main from "./pages/main/Main";
-import Detail from "./pages/detail/Detail";
+import SignLayout from "./pages/sign/components/signLayout/SignLayout";
+import SignIn from "./pages/sign/SignIn";
+import SignUp from "./pages/sign/SignUp";
+import MainLayoutRoutes from "./MainLayoutRoutes";
 
 const Routers = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/detail/" element={<Detail />} />
+        <Route path="/" element={<SignLayout />}>
+          <Route path="/" element={<SignIn />} />
+        </Route>
+        <Route path="/signUp" element={<SignLayout />}>
+          <Route path="/signUp" element={<SignUp />} />
+        </Route>
+        <Route path="*" element={<MainLayoutRoutes />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };

@@ -1,5 +1,7 @@
-export const BASE_URL = "http://13.125.248.213:8000/";
+import axios from "axios";
 
-export const API = {
-  USERS: `${BASE_URL}users`,
-};
+export const instance = axios.create({
+  baseURL:
+    "https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/",
+  timeout: 3000,
+});
