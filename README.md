@@ -73,60 +73,51 @@ F/E : 1명
 - 우리 사이트를 처음 이용한다면 Sign Up을 눌러서 회원가입을 진행해보세요 😊
   <img src="https://user-images.githubusercontent.com/90183279/185435012-47846be1-ccc9-411b-845e-e71c1ab486cf.png" width="400" height="400"/>
 
-<br />
-
 - 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
   <br />
 
 2. Todo List
 
 - 일정 등록하는 방법을 알아볼까요?
+
   - 여기 보이는 입력창에 작성하려는 내용을 작성합니다.  
      <br />
     <img src="https://user-images.githubusercontent.com/90183279/185435887-1d7dc0a1-d948-45e3-8b2a-512fae75ac2f.png" width="400" height="400"/>
 
-<br />
-
-- Create 버튼을 클릭하거나 Enter 키를 누르면 등록이 완료됩니다.
-  <br />
-  <img src="https://user-images.githubusercontent.com/90183279/185436359-ef8db209-9d05-44b5-9329-7f9591db215d.png" width="400" height="400"/>
+  - Create 버튼을 클릭하거나 Enter 키를 누르면 등록이 완료됩니다.
+    <br />
+    <img src="https://user-images.githubusercontent.com/90183279/185436359-ef8db209-9d05-44b5-9329-7f9591db215d.png" width="400" height="400"/>
 
 <br />
 
 - Todo를 Update 하고 싶습니다.
+
   - 이 아이콘을 클릭하면, 수정할 수 있는 입력창이 생성됩니다.
     <br />
     <img src="https://user-images.githubusercontent.com/90183279/185438558-f088798a-5c1f-40a9-85f0-c00769f049fd.png" width="400" height="400"/>
 
-<br />
+  - 입력창에 수정하려는 내용을 작성합니다.
+    <br />
+    <img src="https://user-images.githubusercontent.com/90183279/185438860-25037648-74a7-43cd-a851-1bd264768091.png" width="400" height="100"/>
 
-- 입력창에 수정하려는 내용을 작성합니다.
-  <br />
-  <img src="https://user-images.githubusercontent.com/90183279/185438860-25037648-74a7-43cd-a851-1bd264768091.png" width="400" height="200"/>
+  - 일정을 완료했다면 이 아이콘을 클릭하세요
+    <br />
+    <img src="https://user-images.githubusercontent.com/90183279/185439092-7044ddb1-4606-4f6e-b225-c9df7d986f87.png" width="400" height="100"/>
 
-<br />
-
-- 일정을 완료했다면 이 아이콘을 클릭하세요
-  <br />
-  <img src="https://user-images.githubusercontent.com/90183279/185439092-7044ddb1-4606-4f6e-b225-c9df7d986f87.png" width="400" height="200"/>
-
-<br />
-
-- 내용도 작성이 끝났고, 아이콘도 잘 선택했다면, Submit 버튼을 누르거나 Enter 키를 누르면 Update가 완료됩니다.
-  <br />
-  <img src="https://user-images.githubusercontent.com/90183279/185439286-db507a02-5557-4fe7-b2aa-9a76f5b478d8.png" width="400" height="200"/>
+  - 내용도 작성이 끝났고, 아이콘도 잘 선택했다면, Submit 버튼을 누르거나 Enter 키를 누르면 Update가 완료됩니다.
+    <br />
+    <img src="https://user-images.githubusercontent.com/90183279/185439286-db507a02-5557-4fe7-b2aa-9a76f5b478d8.png" width="400" height="100"/>
 
 <br />
 
 - Todo를 삭제하고 싶어요!
+
   - Todo를 삭제하고 싶다면 오른쪽 끝단의 Delete Icon을 클릭해주세요.
     <br />
-    <img src="https://user-images.githubusercontent.com/90183279/185439546-2449d1d3-a9d6-4a6a-91ed-5790c675effb.png" width="400" height="200"/>
+    <img src="https://user-images.githubusercontent.com/90183279/185439546-2449d1d3-a9d6-4a6a-91ed-5790c675effb.png" width="400" height="100"/>
 
-<br />
-
-- 단! 다시한번 묻지 않으니, 다시 한번 생각하고 삭제해야겠지요? 😅
-  <br />
+  - 단! 다시한번 묻지 않으니, 다시 한번 생각하고 삭제해야겠지요? 😅
+    <br />
 
 3. Logout
 
