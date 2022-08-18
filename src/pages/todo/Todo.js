@@ -161,9 +161,11 @@ const Todo = observer(() => {
 
   return (
     <div className="h-screen bg-[#FAFAFA] w-screen">
-      <div className="flex justify-center h-full bg-amber-100">
+      <div className="flex justify-center h-full p-4 bg-amber-100">
         <div>
-          <h1 className="mb-10 text-5xl font-bold text-center ">TodoList</h1>
+          <h1 className="mt-5 mb-10 text-5xl font-bold text-center">
+            TodoList
+          </h1>
           <form
             className="flex items-center"
             onSubmit={event => {
