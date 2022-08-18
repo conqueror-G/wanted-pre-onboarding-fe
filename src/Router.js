@@ -1,21 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignLayout from "./pages/sign/components/signLayout/SignLayout";
-import SignIn from "./pages/sign/SignIn";
-import SignUp from "./pages/sign/SignUp";
+import Sign from "./pages/sign/Sign";
 import MainLayoutRoutes from "./MainLayoutRoutes";
+import Toast from "./components/toast/Toast";
 
 const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignLayout />}>
-          <Route path="/" element={<SignIn />} />
-        </Route>
-        <Route path="/signUp" element={<SignLayout />}>
-          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/" element={<Sign />} />
+          <Route path="/signUp" element={<Sign />} />
         </Route>
         <Route path="*" element={<MainLayoutRoutes />} />
       </Routes>
+      <Toast />
     </BrowserRouter>
   );
 };

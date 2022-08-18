@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: titillium-web, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -17,5 +10,9 @@ code {
 @layer components {
   .flexCenter {
     @apply flex flex-col items-center justify-center;
+  }
+
+  .centerAlign {
+    @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
   }
 }
