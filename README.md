@@ -74,6 +74,7 @@ F/E : 1명
 1. Sign-in, Sign-up
 
 - 우리 사이트를 처음 이용한다면 Sign Up을 눌러서 회원가입을 진행해보세요 😊
+  <br />
   <img src="https://user-images.githubusercontent.com/90183279/185435012-47846be1-ccc9-411b-845e-e71c1ab486cf.png" width="400" height="400"/>
 
 - 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
