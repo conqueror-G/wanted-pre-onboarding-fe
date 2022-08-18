@@ -18,6 +18,9 @@ F/E : 1명
 
 2일
 
+## 시현 영상
+[보러가기](https://youtu.be/eLuiGcd2uWM)
+
 ## 클라이언트 요구사항
 
 1. Sign-in / Sign-up
