@@ -43,5 +43,46 @@ F/E : 1명
   - 수정모드에서는 개별 아이템의 우측에 제출버튼과 취소버튼이 표시되며 해당 버튼을 통해서 수정 내용을 제출하거나 수정을 취소할 수 있도록 해주세요
   - 투두 리스트의 개별 아이템 우측에 삭제버튼이 존재하고 해당 버튼을 누르면 투두 리스트가 삭제되도록 해주세요
 
+## 이슈 공유
+클릭한 버튼이 가리키고 있는 게시물의 id를 선택하여 게시물의 내용을 Update 하는 것이 가장 오랜 시간이 소요되었습니다.
+- 해결 방법은 의외로 매우 간단했습니다 현재 게시물의 id와 유저가 클릭한 id가 일치하면 Update 모드가 되게끔 하면 됩니다.
+- list.id는 게시물의 id번호이고, todoDataStore.isTodoContentEditId는 유저가 클릭한 게시물의 id번호입니다.
+- switch문이기 때문에 list.id === todoDataStore.isTodoContentEditId 이면 return 문이 실행됩니다.
+```javascript
+{(() => {
+  switch (list.id) {
+    case todoDataStore.isTodoContentEditId:
+      return (
+        ...your code
+      );
+    default:
+  }
+})()}
+```
+
+## 우리의 Todo List Web App을 소개합니다. - tutorials
+1. Sign-in, Sign-up
+- 우리 사이트를 처음 이용한다면 Sign Up을 눌러서 회원가입을 진행해보세요 😊
+- 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
+<br />
+
+2. Todo List
+- 일정 등록하는 방법을 알아볼까요?
+  - 여기 보이는 입력창에 작성하려는 내용을 작성합니다.
+  - Create 버튼을 클릭하거나 Enter 키를 누르면 등록이 완료됩니다. 
+- Todo를 Update 하고 싶습니다.
+  - 이 아이콘을 클릭하면, 수정할 수 있는 입력창이 생성됩니다.
+  - 입력창에 수정하려는 내용을 작성합니다.
+  - 혹시나 일정을 완료했다면 아이콘을 클릭하세요
+  - 내용도 작성이 끝났고, 아이콘도 잘 선택했다면, Submit 버튼을 누르거나 Enter 키를 누르면 Update가 완료됩니다.
+- Todo를 삭제하고 싶어요!
+  - Todo를 삭제하고 싶다면 오른쪽 끝단의 Delete Icon을 클릭해주세요.
+  - 단! 다시한번 묻지 않으니, 다시 한번 생각하고 삭제해야겠지요? 😅
+
+3. Logout
+- 화면 최상단의 Logout 버튼을 클릭하면 Logout 됩니다. 
+
+
+
 
 
