@@ -7,8 +7,6 @@ import Input from "./components/input/Input";
 
 import { FcHighPriority } from "react-icons/fc";
 
-import "./Sign.css";
-
 const Sign = observer(() => {
   if (localStorage.getItem("access_token")) {
     return <Navigate to="/todo" replace={true} />;
@@ -81,7 +79,7 @@ const Sign = observer(() => {
       });
       signStore.setUserEmail("");
       signStore.setUserPassword("");
-      localStorage.setItem("access_token", response.data);
+      localStorage.setItem("access_token", response.data.access_token);
       if (pathName === "undefined") {
         navigate("/");
       } else {
