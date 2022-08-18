@@ -63,26 +63,73 @@ F/E : 1명
 ## 우리의 Todo List Web App을 소개합니다. - tutorials
 1. Sign-in, Sign-up
 - 우리 사이트를 처음 이용한다면 Sign Up을 눌러서 회원가입을 진행해보세요 😊
-- 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
 <br />
-![SignUp](https://user-images.githubusercontent.com/90183279/185434101-2ee18d8f-002c-48c1-9865-7c0d3b53a935.gif)
+
+![스크린샷 2022-08-19 오전 12 30 13](https://user-images.githubusercontent.com/90183279/185435012-47846be1-ccc9-411b-845e-e71c1ab486cf.png)
+
+<br />
+
+- 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
+
+<br />
+<br />
 
 2. Todo List
 - 일정 등록하는 방법을 알아볼까요?
-  - 여기 보이는 입력창에 작성하려는 내용을 작성합니다.
+  - 여기 보이는 입력창에 작성하려는 내용을 작성합니다.  
+<br />
+
+![스크린샷 2022-08-19 오전 12 35 41](https://user-images.githubusercontent.com/90183279/185435887-1d7dc0a1-d948-45e3-8b2a-512fae75ac2f.png)
+
+<br /> 
+
   - Create 버튼을 클릭하거나 Enter 키를 누르면 등록이 완료됩니다. 
+<br />
+
+![스크린샷 2022-08-19 오전 12 38 00](https://user-images.githubusercontent.com/90183279/185436359-ef8db209-9d05-44b5-9329-7f9591db215d.png)
+
+<br /> 
 - Todo를 Update 하고 싶습니다.
   - 이 아이콘을 클릭하면, 수정할 수 있는 입력창이 생성됩니다.
+<br />
+
+![스크린샷 2022-08-19 오전 12 47 35](https://user-images.githubusercontent.com/90183279/185438558-f088798a-5c1f-40a9-85f0-c00769f049fd.png)
+
+<br />
   - 입력창에 수정하려는 내용을 작성합니다.
-  - 혹시나 일정을 완료했다면 아이콘을 클릭하세요
+<br />
+
+![스크린샷 2022-08-19 오전 12 49 00](https://user-images.githubusercontent.com/90183279/185438860-25037648-74a7-43cd-a851-1bd264768091.png)
+
+<br />
+  - 일정을 완료했다면 이 아이콘을 클릭하세요
+<br />
+
+![스크린샷 2022-08-19 오전 12 50 06](https://user-images.githubusercontent.com/90183279/185439092-7044ddb1-4606-4f6e-b225-c9df7d986f87.png)
+
+<br />
   - 내용도 작성이 끝났고, 아이콘도 잘 선택했다면, Submit 버튼을 누르거나 Enter 키를 누르면 Update가 완료됩니다.
+<br />
+
+![스크린샷 2022-08-19 오전 12 51 17](https://user-images.githubusercontent.com/90183279/185439286-db507a02-5557-4fe7-b2aa-9a76f5b478d8.png)
+
+<br />
 - Todo를 삭제하고 싶어요!
   - Todo를 삭제하고 싶다면 오른쪽 끝단의 Delete Icon을 클릭해주세요.
+<br />
+
+![스크린샷 2022-08-19 오전 12 52 35](https://user-images.githubusercontent.com/90183279/185439546-2449d1d3-a9d6-4a6a-91ed-5790c675effb.png)
+
+<br />
   - 단! 다시한번 묻지 않으니, 다시 한번 생각하고 삭제해야겠지요? 😅
 
 3. Logout
-- 화면 최상단의 Logout 버튼을 클릭하면 Logout 됩니다. 
+- 화면 최상단의 Logout 버튼을 클릭하면 Logout 됩니다.
+<br /> 
 
+![스크린샷 2022-08-19 오전 12 53 16](https://user-images.githubusercontent.com/90183279/185439688-2add2063-d9b7-41cd-9b89-76e5ab3e66e9.png)
+
+<br />
 
 
 
