@@ -1,55 +1,74 @@
-## 프로젝트 정보
+## ☀️ 시현 영상
 
-React js v18
-<br />
-상태관리 : mobx v6
-<br />
-라우팅 : react-router-dom v6
-<br />
-CSS : tailwindcss v3
+👉 [보러가기](https://www.youtube.com/watch?v=eLuiGcd2uWM)
 <br />
 
-## 개발 인원
+## ☀️ Secret Todo란?
 
-F/E : 1명
+- 누구에게도 공유하고 싶지 않은 비밀스러운 Todo List를 관리 할 수 있습니다.
+
 <br />
 
-## 개발 기간
+## ☀️ Secret Todo 핵심 기능
 
-2일
+- Todo List 일정 등록, 삭제, 편집
 
-## 시현 영상
-[보러가기](https://youtu.be/eLuiGcd2uWM)
+<br />
 
-## 클라이언트 요구사항
+## ☀️ 개발 인원 및 기간
 
-1. Sign-in / Sign-up
+- 개발기간 : 2022/08/17 ~ 2022/08/18 (총 2일)
 
-- "/" 경로에서 로그인/회원가입 모두 할 수 있게 해주세요.
-  - 페이지 안에 이메일 입력창, 비밀번호 입력창, 제출 버튼이 포함된 형태로 구성해주세요
-- 이메일과 비밀번호의 유효성 검사기능을 구현해주세요.
-  - 이메일 조건: @ 포함
-  - 비밀번호 조건: 8자 이상
-  - 입력된 이메일과 비밀번호가 위 조건을 만족할 때만 버튼이 활성화 되도록 해주세요
-- 로그인 API를 호출하고, 올바른 응답을 받았을 때 /todo 경로로 이동해주세요
-  - 로그인 API는 로그인이 성공했을 시 Response Body에 JWT를 포함해서 응답합니다.
-  - 응답받은 JWT는 로컬 스토리지에 저장해주세요
-- 로그인 여부에 따른 리다이렉트 처리를 구현해주세요
-  - 로컬 스토리지에 토큰이 있는 상태로 / 페이지에 접속한다면 /todo 경로로 리다이렉트 시켜주세요
-  - 로컬 스토리지에 토큰이 없는 상태로 /todo페이지에 접속한다면 / 경로로 리다이렉트 시켜주세요
+- 개발 인원
+  - F/E(1명) : 김민석
+  - B/E : wanted
     <br />
 
-2. Todo List
+## ☀️ 기술 스택
 
-- /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
-- 리스트 페이지에는 투두 리스트의 내용과 완료 여부가 표시되어야 합니다.
-- 리스트 페이지에는 입력창과 추가 버튼이 있고, 추가 버튼을 누르면 입력창의 내용이 새로운 투두 리스트로 추가되도록 해주세요
-- 투두 리스트의 수정, 삭제 기능을 구현해주세요
-  - 투두 리스트의 개별 아이템 우측에 수정버튼이 존재하고 해당 버튼을 누르면 수정모드가 활성화되고 투두 리스트의 내용을 수정할 수 있도록 해주세요
-  - 수정모드에서는 개별 아이템의 우측에 제출버튼과 취소버튼이 표시되며 해당 버튼을 통해서 수정 내용을 제출하거나 수정을 취소할 수 있도록 해주세요
-  - 투두 리스트의 개별 아이템 우측에 삭제버튼이 존재하고 해당 버튼을 누르면 투두 리스트가 삭제되도록 해주세요
+<img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/><img src="https://img.shields.io/badge/MobX-FF9955?style=flat-square&logo=MobX&logoColor=white"/><img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/><img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=TailwindCSS&logoColor=white"/>
+<br />
 
-## 이슈 공유
+## ☀️ 구현 기능
+
+💁🏻 공통
+Response HTTP Status에 따라 Toast 메시지가 나타나도록 설정했습니다.
+
+💁🏻 Sign-in / Sign-up
+
+- 공통
+  - 하나의 경로에서 Sign-in, Sign-up을 할 수 있도록 라우팅을 구현했습니다.
+  - 이메일은 @ 포함하도록 유효성 검사를 하고, 시각적으로 표현되도록 구현했습니다.
+  - 비밀번호는 8자 이상 입력하도록 유효성 검사를 하고, 시각적으로 표현되도록 구현했습니다.
+  - 유저가 지정된 서식을 모두 만족해야 Sign-in, Sign-up 버튼이 활성화 됩니다.
+  - Sign-in시 발급 받은 JWT Token이 있다면 todo 페이지로 리다이렉트 됩니다.
+- Sign-in
+  - 지정된 서식을 모두 만족하고, 패스워드가 틀리지 않았다면 Sign-in을 할 수 있습니다.
+- Sign-up
+  - 이미 등록된 Email이 아니고, 지정된 서식을 만족하면 Sign-up을 할 수 있습니다.
+  - Sign-up에 성공하면 todo 페이지로 리다이렉트 됩니다.
+
+<br />
+
+💁🏻 Todo List
+
+- 서버와 통신이 연결되지 않는 다면 로딩 스피너가 나타납니다.
+- Sign-in시 발급 받은 JWT Token이 없다면 Sign-in 페이지로 리다이렉트 됩니다.
+- 저장된 데이터가 없다면 Not a Data가 표기됩니다.
+- 입력창에 아무것도 입력하지 않는다면 Create 버튼이 비활성화 됩니다.
+- todo list가 수정 모드라면 Create 버튼이 비활성화 됩니다.
+- 입력창에 내용을 입력하고, Create 버튼을 클릭하거나 Enter 키를 입력하면 todo list가 등록됩니다.
+- 한 개의 게시물이라도 등록한다면 페이지네이션 기능이 활성화 됩니다.
+- 한 페이지에서 10개까지 보이고, 20개, 30개가 보이도록 설정할 수 있습니다.
+- 등록된 게시물은 수정 할 수 있으며, Pen 아이콘을 클릭하면 수정모드가 활성화 됩니다.
+- 수정 입력 창에 아무것도 입력하지 않으면, 제출 할 수 없도록 버튼이 비활성화 됩니다.
+- 수정할 내용을 입력하고 이모티콘을 클릭하면 완료 여부를 수정할 수 있고, Submit 버튼을 클릭하면 수정이 완료됩니다.
+- 수정을 취소하고 싶다면 Submit 버튼 오른쪽의 'Cancel'을 클릭하면 취소 할 수 있습니다.
+- 삭제하고 싶은 게시물이 있다면, Pen 아이콘 오른쪽의 Delete 아이콘을 클릭하면 삭제 할 수 있습니다.(단, 재확인 삭제 요청은 하지 않습니다)
+
+<br />
+
+## ☀️ 이슈 공유
 
 클릭한 버튼이 가리키고 있는 게시물의 id를 선택하여 게시물의 내용을 Update 하는 것이 가장 오랜 시간이 소요되었습니다.
 
@@ -69,12 +88,11 @@ F/E : 1명
 })()}
 ```
 
-## 우리의 Todo List Web App을 소개합니다. - tutorials
+## ☀️ 우리의 Todo List Web App을 소개합니다. - tutorials
 
 1. Sign-in, Sign-up
 
 - 우리 사이트를 처음 이용한다면 Sign Up을 눌러서 회원가입을 진행해보세요 😊
-  <br />
   <img src="https://user-images.githubusercontent.com/90183279/185435012-47846be1-ccc9-411b-845e-e71c1ab486cf.png" width="400" height="400"/>
 
 - 회원가입에 성공한다면 별도의 로그인은 필요 없습니다. 😀 바로 서비스를 이용해보세요.
