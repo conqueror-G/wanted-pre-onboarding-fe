@@ -32,8 +32,8 @@
 ## ☀️ 구현 기능
 
 💁🏻 공통
-<br />
-Response HTTP Status에 따라 Toast 메시지가 나타나도록 설정했습니다.
+
+- Response HTTP Status에 따라 Toast 메시지가 나타나도록 설정했습니다.
 
 💁🏻 Sign-in / Sign-up
 
