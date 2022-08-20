@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { observer } from "mobx-react";
-import { instance } from "../../config";
+import { axiosInstance } from "../../config";
 import useStore from "../../useStore";
 import ReactLoading from "react-loading";
 import TextInput from "./components/input/TextInput";
+import EditInput from "./components/input/EditInput";
 import Pagination from "./components/pagination/Pagination";
 
 import { FcHighPriority, FcOk } from "react-icons/fc";
@@ -14,14 +15,13 @@ import {
   MdSentimentVerySatisfied,
   MdOutlineSentimentVeryDissatisfied,
 } from "react-icons/md";
-import EditInput from "./components/input/EditInput";
 
 const Todo = observer(() => {
+  const { toastStore, todoDataStore, paginationStore } = useStore();
+
   if (!localStorage.getItem("access_token")) {
     return <Navigate to="/" />;
   }
-
-  const { toastStore, todoDataStore, paginationStore } = useStore();
 
   const todoListOffset =
     (paginationStore.todoListPage - 1) * paginationStore.todoListLimit;
@@ -52,7 +52,7 @@ const Todo = observer(() => {
 
     try {
       if (todoDataStore.todoContent.length > 0) {
-        await instance("/todos", {
+        await axiosInstance("/todos", {
           method: "post",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -64,7 +64,7 @@ const Todo = observer(() => {
       }
 
       if (todoDataStore.todoEditContent.length > 0) {
-        await instance(`todos/${id}`, {
+        await axiosInstance(`todos/${id}`, {
           method: "put",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -76,7 +76,7 @@ const Todo = observer(() => {
         toastStore.setToastMessage("Update successed");
       }
 
-      const response = await instance("/todos", {
+      const response = await axiosInstance("/todos", {
         method: "get",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -103,14 +103,14 @@ const Todo = observer(() => {
 
   const requestToServerTodoDeleteData = async id => {
     try {
-      await instance(`todos/${id}`, {
+      await axiosInstance(`todos/${id}`, {
         method: "delete",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
 
-      const response = await instance("/todos", {
+      const response = await axiosInstance("/todos", {
         method: "get",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,

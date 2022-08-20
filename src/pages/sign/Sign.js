@@ -1,11 +1,11 @@
 import { observer } from "mobx-react";
 import { useEffect } from "react";
 import { NavLink, useLocation, useNavigate, Navigate } from "react-router-dom";
-import { instance } from "../../config";
+import { axiosInstance } from "../../config";
 import useStore from "../../useStore";
 import Input from "./components/input/Input";
 
-import { FcHighPriority } from "react-icons/fc";
+import { FcHighPriority, FcOk } from "react-icons/fc";
 
 const Sign = observer(() => {
   if (localStorage.getItem("access_token")) {
@@ -73,18 +73,18 @@ const Sign = observer(() => {
     };
 
     try {
-      const response = await instance(address(), {
+      const response = await axiosInstance(address(), {
         method: "post",
         data: serverForm,
       });
       signStore.setUserEmail("");
       signStore.setUserPassword("");
       localStorage.setItem("access_token", response.data.access_token);
-      if (pathName === "undefined") {
-        navigate("/");
-      } else {
-        navigate("/todo");
-      }
+      navigate("/todo");
+      toastStore.setToastIcon(<FcOk className="text-2xl" />);
+      toastStore.setToastMessage(
+        pathName ? "Sign-up successed" : "Sign-in successed"
+      );
     } catch (error) {
       switch (error.response.status) {
         case 400:

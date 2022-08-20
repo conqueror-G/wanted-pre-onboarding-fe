@@ -1,11 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import useStore from "../../useStore";
+
+import { FcOk } from "react-icons/fc";
 
 const TopNav = () => {
   const navigate = useNavigate();
 
+  const { toastStore } = useStore();
+
   const Logout = () => {
     localStorage.removeItem("access_token");
     navigate("/");
+    toastStore.setToastIcon(<FcOk className="text-2xl" />);
+    toastStore.setToastMessage("Logout successed");
   };
   return (
     <nav className=" h-32 border-b-4 shadow-lg bg-[#F4F4F4] mb-4 flex justify-center items-center">
