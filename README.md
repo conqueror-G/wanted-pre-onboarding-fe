@@ -15,14 +15,14 @@
 
 </div>
 
-## ☀️ 시현 영상 링크
+## 🎥 시현 영상 링크
 
 👉 [보러가기](https://www.youtube.com/watch?v=eLuiGcd2uWM)
 <br />
 
 ## 👬 팀원 소개
 
-- F/E(1명) : 김민석
+- F/E : 김민석
 - B/E : wanted
 
 ## 🔑 Secret Todo란?
