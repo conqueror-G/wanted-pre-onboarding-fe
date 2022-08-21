@@ -8,6 +8,8 @@ import Input from "./components/input/Input";
 import { FcHighPriority, FcOk } from "react-icons/fc";
 
 const Sign = observer(() => {
+  // 관심사의 분리 필요(도메인, 비즈니스 로직 분리)
+
   if (localStorage.getItem("access_token")) {
     return <Navigate to="/todo" replace={true} />;
   }
