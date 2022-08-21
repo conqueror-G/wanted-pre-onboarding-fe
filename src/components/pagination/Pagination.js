@@ -1,32 +1,30 @@
 import { observer } from "mobx-react";
-import useStore from "../../../../useStore";
+import useStore from "../../useStore";
 
-const Pagination = observer(() => {
-  const { todoDataStore, paginationStore } = useStore();
+const Pagination = observer(({ data }) => {
+  const { paginationStore } = useStore();
 
-  const numPages = Math.ceil(
-    todoDataStore.todoData.length / paginationStore.todoListLimit
-  );
+  const numPages = Math.ceil(data.length / paginationStore.limit);
 
   const buttonHandler = {
     prevMoveButton() {
-      paginationStore.setTodoListPrevPage();
+      paginationStore.setPrevPage();
     },
 
     doublePrevMoveButton() {
-      paginationStore.setTodoListPage(1);
+      paginationStore.setPage(1);
     },
 
     nextMoveButton() {
-      paginationStore.setTodoListNextPage();
+      paginationStore.setNextPage();
     },
 
     doubleNextMoveButton() {
-      paginationStore.setTodoListPage(numPages);
+      paginationStore.setPage(numPages);
     },
 
     currentMoveButton() {
-      paginationStore.setTodoListPage(1);
+      paginationStore.setPage(1);
     },
   };
 
@@ -44,9 +42,9 @@ const Pagination = observer(() => {
         Rows per page
         <select
           className="py-1 ml-2 border w-14"
-          value={paginationStore.todoListLimit}
+          value={paginationStore.limit}
           onChange={({ target: { value } }) =>
-            paginationStore.setTodoListLimit(Number(value))
+            paginationStore.setLimit(Number(value))
           }
           onClick={currentMoveButton}
         >
@@ -60,14 +58,14 @@ const Pagination = observer(() => {
           <li>
             <button
               onClick={doublePrevMoveButton}
-              disabled={paginationStore.todoListPage === 1}
+              disabled={paginationStore.page === 1}
               className="px-3 py-2 leading-tight text-gray-500 bg-bgDefault hover:bg-gray-100 hover:text-gray-700 disabled:cursor-not-allowed"
             >
               &lt;&lt;
             </button>
             <button
               onClick={prevMoveButton}
-              disabled={paginationStore.todoListPage === 1}
+              disabled={paginationStore.page === 1}
               className="px-3 py-2 mr-6 leading-tight text-gray-500 bg-bgDefault hover:bg-gray-100 hover:text-gray-700 disabled:cursor-not-allowed"
             >
               &lt;
@@ -78,12 +76,12 @@ const Pagination = observer(() => {
             .map((_, i) => (
               <button
                 className={
-                  paginationStore.todoListPage === i + 1
+                  paginationStore.page === i + 1
                     ? "page w-10 rounded-full bg-primary text-lg text-[#FFF]"
                     : "w-10 text-lg"
                 }
                 key={i + 1}
-                onClick={() => paginationStore.setTodoListPage(i + 1)}
+                onClick={() => paginationStore.setPage(i + 1)}
               >
                 {i + 1}
               </button>
@@ -91,14 +89,14 @@ const Pagination = observer(() => {
           <li>
             <button
               onClick={nextMoveButton}
-              disabled={paginationStore.todoListPage === numPages}
+              disabled={paginationStore.page === numPages}
               className="px-3 py-2 ml-6 leading-tight text-gray-500 bg-bgDefault hover:bg-gray-100 hover:text-gray-700 disabled:cursor-not-allowed"
             >
               &gt;
             </button>
             <button
               onClick={doubleNextMoveButton}
-              disabled={paginationStore.todoListPage === numPages}
+              disabled={paginationStore.page === numPages}
               className="px-3 py-2 leading-tight text-gray-500 bg-bgDefault hover:bg-gray-100 hover:text-gray-700 disabled:cursor-not-allowed"
             >
               &gt;&gt;

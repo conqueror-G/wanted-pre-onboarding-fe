@@ -1,31 +1,31 @@
 import { observable } from "mobx";
 
 const paginationStore = observable({
-  _todoListLimit: 10,
-  _todoListPage: 1,
+  _limit: 10,
+  _page: 1,
 
-  get todoListLimit() {
-    return this._todoListLimit;
+  get limit() {
+    return this._limit;
   },
 
-  get todoListPage() {
-    return this._todoListPage;
+  get page() {
+    return this._page;
   },
 
-  setTodoListLimit(value) {
-    return (this._todoListLimit = value);
+  setLimit(value) {
+    return (this._limit = value);
   },
 
-  setTodoListPage(value) {
-    return (this._todoListPage = value);
+  setPage(value) {
+    return (this._page = value);
   },
 
-  setTodoListNextPage() {
-    return this._todoListPage++;
+  setNextPage() {
+    return this._page++;
   },
 
-  setTodoListPrevPage() {
-    return this._todoListPage--;
+  setPrevPage() {
+    return this._page--;
   },
 });
 
