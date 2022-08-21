@@ -43,3 +43,5 @@ npm start
 ```
 
 ## 📖 [Wiki](https://github.com/conqueror-G/wanted-pre-onboarding-fe/wiki)
+
+## 🕐 [Backlog](https://docs.google.com/spreadsheets/d/1SySFdIR0-_ZGr7Nh0Ymh0H7M2qSFL1tbyXLvD451s4I/edit#gid=0)
