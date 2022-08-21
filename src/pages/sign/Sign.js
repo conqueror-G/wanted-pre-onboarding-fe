@@ -8,6 +8,7 @@ import Input from "./components/input/Input";
 import { FcHighPriority, FcOk } from "react-icons/fc";
 
 const Sign = observer(() => {
+  // (선택) "/"에서 SignIn, SignUp 라우팅
   if (localStorage.getItem("access_token")) {
     return <Navigate to="/todo" replace={true} />;
   }
