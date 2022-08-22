@@ -1,8 +1,9 @@
 import { observer } from "mobx-react";
+import { useEffect } from "react";
 import useStore from "../../../../useStore";
 import { axiosInstance } from "../../../../config";
 import AppContext from "../../../../AppContext";
-import Input from "../input/Input";
+import Loading from "../../../../components/loading/Loading";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
@@ -16,6 +17,11 @@ const TodoContent = observer(({ children }) => {
   const { todoDataStore, paginationStore, toastStore } = useStore();
 
   const todoListOffset = (paginationStore.page - 1) * paginationStore.limit;
+
+  const onEditMode = id => {
+    todoDataStore.setIsTodoContentEditId(id);
+    todoDataStore.setIsTodoCompletedIcon(false);
+  };
 
   const requestToServerTodoDeleteData = async id => {
     try {
@@ -61,10 +67,38 @@ const TodoContent = observer(({ children }) => {
     }
   };
 
-  const onEditMode = id => {
-    todoDataStore.setIsTodoContentEditId(id);
-    todoDataStore.setIsTodoCompletedIcon(false);
+  const requestToServerTodoData = async () => {
+    try {
+      const response = await axiosInstance("/todos", {
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
+
+      todoDataStore.setTodoData(response.data);
+      todoDataStore.setIsTodoDataLoading(false);
+    } catch (error) {
+      switch (error.response.status) {
+        case 401:
+          toastStore.setToastIcon(<FcHighPriority className="text-2xl" />);
+          toastStore.setToastMessage("Please sign-in and try again");
+          break;
+        default:
+          toastStore.setToastIcon(<FcHighPriority className="text-2xl" />);
+          toastStore.setToastMessage("Lost connection with server");
+          break;
+      }
+    }
   };
+
+  useEffect(() => {
+    requestToServerTodoData();
+  }, []);
+
+  if (todoDataStore.isTodoDataLoading) {
+    return <Loading />;
+  }
 
   return (
     <ul>
