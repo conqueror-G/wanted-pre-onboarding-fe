@@ -1,23 +1,29 @@
 import { observer } from "mobx-react";
 import useStore from "../../../../useStore";
 
-const EditInput = observer(({ type, name, value }) => {
+const Input = observer(({ type, value, name }) => {
   const { todoDataStore } = useStore();
 
   const handleEnteredUserInfo = event => {
     const { name, value } = event.target;
 
     switch (name) {
+      case "todoContent":
+        todoDataStore.setTodoContent(value);
+        break;
+
       case todoDataStore.isTodoContentEditId.toString():
         todoDataStore.setTodoEditContent(value);
         break;
+
       default:
     }
   };
+
   return (
     <input
       type={type}
-      className="py-1.5 pr-20 bg-amber-200 rounded ml-6 pl-4 text-lg"
+      className="inline-block pl-2 pr-36 py-1.5 border-2 bg-amber-50 rounded mr-4 disabled:cursor-not-allowed"
       name={name}
       value={value}
       onChange={handleEnteredUserInfo}
@@ -25,4 +31,4 @@ const EditInput = observer(({ type, name, value }) => {
   );
 });
 
-export default EditInput;
+export default Input;
