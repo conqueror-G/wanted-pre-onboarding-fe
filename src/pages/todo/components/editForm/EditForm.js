@@ -71,6 +71,7 @@ const EditForm = observer(() => {
 
   const editCanseler = () => {
     todoDataStore.setIsTodoContentEditId("");
+    todoDataStore.setTodoEditContent("");
   };
 
   return (
