@@ -15,9 +15,9 @@
 
 </div>
 
-## 🎥 시현 영상 링크
+## 🎥 데모 영상 링크
 
-👉 [보러가기](https://www.youtube.com/watch?v=eLuiGcd2uWM)
+👉 [보러가기](https://youtu.be/kgIhNEARE2M)
 <br />
 
 ## 👬 팀원 소개
