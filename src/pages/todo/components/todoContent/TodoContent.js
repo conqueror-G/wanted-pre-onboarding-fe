@@ -110,7 +110,9 @@ const TodoContent = observer(({ children }) => {
               <li
                 key={list.id}
                 className={
-                  todoDataStore.todoData.length > 1 && "border-b-4 relative"
+                  todoDataStore.todoData.length > 1
+                    ? "border-b-4 relative"
+                    : "pb-4 relative"
                 }
               >
                 <div className="flex items-center justify-between p-4 mt-4">
