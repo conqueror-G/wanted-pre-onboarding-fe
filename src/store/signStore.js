@@ -1,6 +1,7 @@
 import { observable } from "mobx";
 
 const signStore = observable({
+  _signType: "Sign In",
   _userEmail: "",
   _userPassword: "",
   _isUserEmailValidMessage: false,
@@ -22,6 +23,10 @@ const signStore = observable({
     return this._isUserPasswordValidMessage;
   },
 
+  get signType() {
+    return this._signType;
+  },
+
   setUserEmail(value) {
     return (this._userEmail = value);
   },
@@ -36,6 +41,10 @@ const signStore = observable({
 
   setIsUserPasswordValidMessage(value) {
     return (this._isUserPasswordValidMessage = value);
+  },
+
+  setSignType(value) {
+    return (this._signType = value);
   },
 });
 
