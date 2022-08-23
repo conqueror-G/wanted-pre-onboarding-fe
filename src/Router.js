@@ -10,7 +10,6 @@ const Routers = () => {
       <Routes>
         <Route path="/" element={<SignLayout />}>
           <Route path="/" element={<Sign />} />
-          <Route path="/signUp" element={<Sign />} />
         </Route>
         <Route path="*" element={<MainLayoutRoutes />} />
       </Routes>

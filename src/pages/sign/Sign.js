@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import { useEffect } from "react";
-import { NavLink, useLocation, useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { axiosInstance } from "../../config";
 import useStore from "../../useStore";
 import Input from "./components/input/Input";
@@ -8,15 +8,11 @@ import Input from "./components/input/Input";
 import { FcHighPriority, FcOk } from "react-icons/fc";
 
 const Sign = observer(() => {
-  // (선택) "/"에서 SignIn, SignUp 라우팅
   if (localStorage.getItem("access_token")) {
     return <Navigate to="/todo" replace={true} />;
   }
 
   const { signStore, toastStore } = useStore();
-
-  const location = useLocation();
-  const pathName = location.pathname.slice(1);
 
   const navigate = useNavigate();
 
@@ -61,6 +57,11 @@ const Sign = observer(() => {
     validator.email(signStore.userEmail)
   );
 
+  const naviSignUp = event => {
+    const { innerText } = event.target;
+    signStore.setSignType(innerText);
+  };
+
   const requestToServerSignForm = async event => {
     event.preventDefault();
 
@@ -70,7 +71,9 @@ const Sign = observer(() => {
     };
 
     const address = () => {
-      return !pathName ? "/auth/signin" : "/auth/signup";
+      return !(signStore.signType === "Sign In")
+        ? "/auth/signup"
+        : "/auth/signin";
     };
 
     try {
@@ -81,11 +84,13 @@ const Sign = observer(() => {
       signStore.setUserEmail("");
       signStore.setUserPassword("");
       localStorage.setItem("access_token", response.data.access_token);
-      navigate("/todo");
       toastStore.setToastIcon(<FcOk className="text-2xl" />);
       toastStore.setToastMessage(
-        pathName ? "Sign-up successed" : "Sign-in successed"
+        !(signStore.signType === "Sign In")
+          ? "Sign-up successed"
+          : "Sign-in successed"
       );
+      navigate("/todo");
     } catch (error) {
       switch (error.response.status) {
         case 400:
@@ -101,6 +106,8 @@ const Sign = observer(() => {
           toastStore.setToastMessage("Please enter your ID or password again");
           break;
         case 404:
+          signStore.setUserEmail("");
+          signStore.setUserPassword("");
           toastStore.setToastIcon(<FcHighPriority className="text-2xl" />);
           toastStore.setToastMessage("You are not a registered user");
           break;
@@ -121,7 +128,8 @@ const Sign = observer(() => {
     signStore.setUserPassword("");
     signStore.setIsUserEmailValidMessage(false);
     signStore.setIsUserPasswordValidMessage(false);
-  }, [pathName]);
+  }, [signStore.signType]);
+
   return (
     <>
       <form className="w-full" onSubmit={requestToServerSignForm}>
@@ -155,7 +163,7 @@ const Sign = observer(() => {
           className="w-full py-2 text-center rounded bg-primary text-[#FFF] font-semibold text-xl mt-4 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           disabled={isEnabledButton}
         >
-          {pathName ? "Sign Up" : "Sign in"}
+          {!(signStore.signType === "Sign In") ? "Sign Up" : "Sign in"}
         </button>
       </form>
       <div className="relative w-full mt-6 border">
@@ -164,15 +172,16 @@ const Sign = observer(() => {
         </div>
       </div>
       <p className="mt-8 text-xl">
-        {pathName
+        {!(signStore.signType === "Sign In")
           ? "Do you already have an account?"
           : "You don't have an account?"}
-        <NavLink
-          to={!pathName ? "/signUp" : "/"}
-          className="ml-4 font-semibold text-primary"
+        <button
+          onClick={naviSignUp}
+          type="button"
+          className="ml-2 font-semibold text-primary"
         >
-          {pathName ? "Sign In" : "Sign Up"}
-        </NavLink>
+          {!(signStore.signType === "Sign In") ? "Sign In" : "Sign Up"}
+        </button>
       </p>
     </>
   );
