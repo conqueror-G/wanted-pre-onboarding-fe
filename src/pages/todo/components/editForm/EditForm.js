@@ -11,7 +11,7 @@ import { FcHighPriority, FcOk } from "react-icons/fc";
 const EditForm = observer(() => {
   const { todoDataStore, toastStore } = useStore();
 
-  const appContext = useContext(AppContext);
+  const todoListIdValue = useContext(AppContext);
 
   const isEnabledButton = !(todoDataStore.todoEditContent.length > 0);
 
@@ -78,11 +78,11 @@ const EditForm = observer(() => {
     <div className="absolute flex -translate-y-1/2 top-1/2 left-[4rem]">
       <form
         className="flex items-center mb-1"
-        onSubmit={event => postEditer(event, appContext)}
+        onSubmit={event => postEditer(event, todoListIdValue)}
       >
         <Input
           type="text"
-          name={appContext}
+          name={todoListIdValue}
           value={todoDataStore.todoEditContent}
         />
         <MdSentimentVerySatisfied
@@ -91,7 +91,7 @@ const EditForm = observer(() => {
               ? "ml-2 text-3xl font-bold text-green-600 cursor-pointer"
               : "ml-2 text-3xl font-bold text-red-600 cursor-pointer"
           }
-          onClick={() => todoCheckCompleted(appContext)}
+          onClick={() => todoCheckCompleted(todoListIdValue)}
         />
         <button
           className="disabled:opacity-60 text-2xl font-medium py-1 ml-4 bg-primary text-[#FFF] rounded-lg px-[1rem] cursor-pointer disabled:cursor-not-allowed mr-3"
